@@ -1,0 +1,72 @@
+Part 1: CSS3 Transitions and Animations
+
+- Basic HTML structure with elements that will be animated, such as buttons, cards, and modals.
+- CSS transitions to create smooth hover effects, fades, and slides.
+- Keyframe animations for continuous or triggered animations, such as a loading animation or a card flip animation.
+- CSS properties like transform, opacity, and transition to create visually appealing effects.
+
+ CSS:
+.button {
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.card {
+  transition: transform 00.5s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  animation: spin 2s linear infinite;
+}
+
+Part 2: JavaScript Functions
+
+- Custom functions that take in parameters and return useful values, such as a function to calculate the position of an element or a function to animate an element.
+- Local vs global scope by using variables and functions within different scopes.
+- Functions  reused to control animation, trigger DOM changes, or calculate values.
+
+JavaScript:
+function animateElement(element, animationClass) {
+  element.classList.add(animationClass);
+}
+
+function calculatePosition(element) {
+  const rect = element.getBoundingClientRect();
+  return { x: rect.x, y: rect.y };
+}
+
+const button = document.getElementById("button");
+button.addEventListener("click", () => {
+  animateElement(button, "animate");
+});
+Part 3: Combining CSS Animations with JavaScript
+
+- JavaScript to trigger CSS animations dynamically by adding or removing classes or modifying styles.
+- Reusable functions that can be used to animate different elements.
+- Event listeners to trigger animations based on user input or other events.
+
+JavaScript:
+function animateBox() {
+  const box = document.getElementById("box");
+  box.classList.add("animate");
+}
+
+document.getElementById("button").addEventListener("click", animateBox);
+
